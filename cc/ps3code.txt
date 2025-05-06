@@ -1,0 +1,40 @@
+public class SimpleCalculator {
+
+    public static Double calculate(Double num1, Double num2, String operator) {
+        Double result;
+        
+        switch on operator {
+            when '+' {
+                result = num1 + num2;
+            }
+            when '-' {
+                result = num1 - num2;
+            }
+            when '*' {
+                result = num1 * num2;
+            }
+            when '/' {
+                if (num2 != 0) {
+                    result = num1 / num2;
+                } else {
+                    System.debug('Error: Division by zero');
+                    return null;
+                }
+            }
+            when else {
+                System.debug('Invalid operator. Use +, -, *, or /.');
+                return null;
+            }
+        }
+        return result;
+    }
+}
+
+
+Double n1 = 20;
+Double n2 = 5;
+
+System.debug('Addition: ' + SimpleCalculator.calculate(n1, n2, '+'));
+System.debug('Subtraction: ' + SimpleCalculator.calculate(n1, n2, '-'));
+System.debug('Multiplication: ' + SimpleCalculator.calculate(n1, n2, '*'));
+System.debug('Division: ' + SimpleCalculator.calculate(n1, n2, '/'));

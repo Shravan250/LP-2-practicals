@@ -1,0 +1,21 @@
+public class IncrementByTen {
+    public Integer value;
+
+    public IncrementByTen(Integer initialValue) {
+        value = initialValue;
+    }
+
+    public void increment() {
+        value += 10;
+    }
+
+    public Integer getValue() {
+        return value;
+    }
+}
+
+
+IncrementByTen obj = new IncrementByTen(20);
+System.debug('Before Increment: ' + obj.getValue());
+obj.increment();
+System.debug('After Increment: ' + obj.getValue());
